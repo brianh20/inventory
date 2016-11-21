@@ -14,16 +14,18 @@ gulp.task('jshint', function(){
 }) ;*/
 
 gulp.task('watch', function(){
-	gulp.watch('./*.html', reload);
-	gulp.watch('./*.js', reload);
+	gulp.watch('./src/*.html', reload);
+	gulp.watch('./src/*.js', reload);
+	gulp.watch('./src/style/*.less', ['less']);
+	gulp.watch('./src/style/*.css', reload);
 });
 
 
 gulp.task('less', function() {
-    return gulp.src('./*.less')
+    return gulp.src('./src/style/*.less')
 	    .pipe(sourcemaps.init())
 	    .pipe(less())
-	    .pipe(concat('bundle.css'))
+	    .pipe(concat('./src/style/bundle.css'))
 	    .pipe(sourcemaps.write('.'))
 	    .pipe(gulp.dest('./'));
 });
@@ -32,7 +34,7 @@ gulp.task('serve', ['less'], function(){
 	browserSync({
 		notify: false,
 		server:{
-			baseDir: './',
+			baseDir: './src/',
 		    routes : {
 		    	'/bower_components' : 'bower_components'
 		    }
