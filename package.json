@@ -1,0 +1,19 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "Inventory status tracking app",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianh20/inventory.git"
+  },
+  "author": "Brian Hume",
+  "license": "SEE LICENSE IN readme.txt",
+  "bugs": {
+    "url": "https://github.com/brianh20/inventory/issues"
+  },
+  "homepage": "https://github.com/brianh20/inventory#readme"
+}
