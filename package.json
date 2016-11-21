@@ -4,7 +4,7 @@
   "description": "Inventory status tracking app",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install && gulp"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/brianh20/inventory/issues"
   },
-  "homepage": "https://github.com/brianh20/inventory#readme"
+  "homepage": "https://github.com/brianh20/inventory#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.2",
+    "gulp-less": "^3.2.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  }
 }

@@ -1,0 +1,18 @@
+{
+  "name": "inventory",
+  "description": "Inventory status tracking app",
+  "main": "gulpfile.js",
+  "authors": [
+    "Brian Hume"
+  ],
+  "license": "SEE LICENSE IN readme.txt",
+  "homepage": "https://github.com/brianh20/inventory",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

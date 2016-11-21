@@ -14,40 +14,27 @@ gulp.task('jshint', function(){
 }) ;*/
 
 gulp.task('watch', function(){
+	gulp.watch('./*.html', reload);
 	gulp.watch('./*.js', reload);
-	gulp.watch('./*.json', reload);
-	gulp.watch('webapp/*.html', reload);
-	gulp.watch('webapp/*.js', reload);
-	gulp.watch('webapp/*.json', reload);
-	gulp.watch('webapp/model/*.json', reload);
-	gulp.watch('webapp/model/*.xml', reload);
-	gulp.watch('webapp/view/*.xml', reload);
-	gulp.watch('webapp/style/*.css', reload);
-	gulp.watch('webapp/controller/*.js', reload);
-	gulp.watch('webapp/i18n/*.properties', reload);
-	gulp.watch('webapp/control/**/*.js', reload);
-	gulp.watch('webapp/control/**/*.xml', reload);
-	gulp.watch('webapp/control/**/*.less', ['less']);
 });
 
 
 gulp.task('less', function() {
-    return gulp.src('./webapp/control/**/*.less')
+    return gulp.src('./*.less')
 	    .pipe(sourcemaps.init())
 	    .pipe(less())
 	    .pipe(concat('bundle.css'))
 	    .pipe(sourcemaps.write('.'))
-	    .pipe(gulp.dest('./webapp/style/'));
+	    .pipe(gulp.dest('./'));
 });
 
 gulp.task('serve', ['less'], function(){
 	browserSync({
 		notify: false,
 		server:{
-			baseDir: './webapp/',
+			baseDir: './',
 		    routes : {
-		    	'/bower_components' : 'bower_components',
-		    	'/resources' : 'resources'
+		    	'/bower_components' : 'bower_components'
 		    }
 		}
 	});
