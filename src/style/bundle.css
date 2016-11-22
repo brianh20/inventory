@@ -1,21 +1,22 @@
 body {
   padding-top: 80px;
+  padding-bottom: 80px;
 }
-
+h4 {
+  color: lightgrey;
+  padding-right: 30px;
+}
 .container {
   border: 1px solid lightgrey;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 lightgrey, 0 6px 20px 0 lightgrey;
   margin-top: 20px;
 }
-
-.jumbotron{
-	background-color: white;
-}
-
-
 .page-header {
   margin-top: 0px;
+}
+.footer {
+  margin-top: 65px;
 }
 
 /*# sourceMappingURL=bundle.css.map */

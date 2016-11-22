@@ -8,8 +8,6 @@
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" media="screen">
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen">
 		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" media="screen">
-
-
 		<!-- ends bower components -->
 
 
@@ -25,225 +23,27 @@
 		<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 
-
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- ends scripts -->
 	</head>
 	<body>
 
-	<!-- navigation bar -->
-	<div class="container-fluid">
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">Control de Inventario</a>
-		    </div>
-		    <ul class="nav navbar-nav">
 
-		      <li class="active"><a href="#">Home</a></li>
+    
 
+	<navbar></navbar>
 
-		      <li class="dropdown">
-		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
-		        <span class="caret"></span></a>
-		        <ul class="dropdown-menu">
-		          <li><a href="#">Sensor</a></li>
-		          <li><a href="#">Elemento</a></li>
-		        </ul>
-		      </li>
-
-		      <li class="dropdown">
-		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ver
-		        <span class="caret"></span></a>
-		        <ul class="dropdown-menu">
-		          <li><a href="#">Sensores</a></li>
-		          <li><a href="#">Elementos</a></li>
-		        </ul>
-		      </li>
-
-
-		    </ul>
-
-		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		    </ul>
-		  </div>
-		</nav>
-	</div>
-	<!-- navigation bar -->
-
-
-	<!-- Home Welcome --
-	<div class="container-fluid">
-	  <div class="jumbotron">
-	    <h1>Control de Inventario</h1> 
-	    <p>Esta aplicación servirá para conocer el estado de su inventario en todo momento.</p> 
-	    <p>Para comenzar a monitorear un activo, haga click en el menú Agregar del panel superior.</p> 
-	  </div>
-	</div>
-	<!-- Home Welcome -->
-
-	<!-- nuevo sensor --
-	<div class="container">
-		<div class="page-header">
-			<h1>Nuevo sensor</h1>
-		</div>
-		<form class="form-horizontal">
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="email">ID Sensor</label>
-				<div class="col-sm-8">
-					<input type="email" class="form-control" id="email" placeholder="Ingrese el código identificador del sensor">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="pwd">Tipo de Sensor:</label>
-				<div class="col-sm-2">
-					<select class="form-control" id="sel1">
-						<option>Apertura</option>
-						<option>Encendido</option>
-						<option>Movimiento</option>
-						<option>Posición</option>
-					</select>
-				</div>
-
-				<label class="control-label col-sm-2" for="pwd">Estado Actual</label>
-					<button class="col-sm-2 btn btn-default" onClick="alert('Sensor sin señal')">Probar Sensor</button>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" placeholder="Sin señal" readonly>
-					</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" id="addSensor">Agregar Sensor</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<!-- nuevo sensor -->
-
-	<!-- nuevo elemento--
-	<div class="container">
-		<div class="page-header">
-			<h1>Nuevo elemento</h1>
-		</div>
-		<form class="form-horizontal">
-			
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="email">Tipo de Elemento</label>
-				<div class="col-sm-8">
-					<input type="email" class="form-control" id="email" placeholder="Heladera, auto, etc. (se puede hacer una lista)">
-				</div>
-			</div>
-		
-
-		
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="email">Número de Serie</label>
-				<div class="col-sm-8">
-					<input type="email" class="form-control" id="email" placeholder="Ingrese el número de serie del elemento">
-				</div>
-			</div>
-		
-
-
-		
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="pwd">Valores a Controlar</label>
-				<div class="col-sm-2">
-					<a class="btn btn-default" onClick="mostrarControl()"><span class="glyphicon glyphicon-plus"></span> Agregar Control</a>
-				</div>
-			</div>
-		
-
-		
-			<div id="agregarControl" >
-				<!-- nuevo monitor --
-				<div class="form-group fila1">
-					<label class="control-label col-sm-2">Monitor:</label>
-					<div class="col-sm-2">
-						<select class="form-control" id="sel1">
-							<option selected>Sensor</option>
-							<option>Valor</option>
-						</select>
-					</div>
-					<div class="col-sm-1">
-						<label class="control-label" for="pwd">Tipo:</label>
-					</div>
-					<div class="col-sm-2">
-						<select class="form-control" id="sel1">
-							<option>Apertura</option>
-							<option selected>Encendido</option>
-							<option>Movimiento</option>
-							<option>Posición</option>
-						</select>
-					</div>
-
-					<div class="col-sm-1">
-						<label class="control-label" for="pwd">ID:</label>
-					</div>
-					<div class="col-sm-2">
-						<select class="form-control" id="sel1">
-							<option selected>ENC1234</option>
-							<option>ENC1235</option>
-						</select>
-					</div>
-
-					<div class="col-sm-1">
-						<a class="btn btn-default" onClick="ocultarControl()"><span class="glyphicon glyphicon-minus"></span></a>
-					</div>
-				</div>
-
-				<--nuevo monitor--
-				<div class="form-group fila2">
-					<label class="control-label col-sm-2">Monitor:</label>
-					<div class="col-sm-2">
-						<select class="form-control" id="sel1">
-							<option>Sensor</option>
-							<option selected>Valor</option>
-						</select>
-					</div>
-					<div class="col-sm-1">
-						<label class="control-label" for="pwd">Nombre:</label>
-					</div>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" placeholder="Fecha Instalación">
-					</div>
-
-					<div class="col-sm-1">
-						<label class="control-label" for="pwd">Valor:</label>
-					</div>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" placeholder="22/11/2016">
-					</div>
-
-					<div class="col-sm-1">
-						<a class="btn btn-default" onClick="ocultarControl()"><span class="glyphicon glyphicon-minus"></span></a>
-					</div>
-				</div>
-			</div>
-		
-
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Agregar Elemento</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<!-- nuevo elemento -->
+	
+	<ui-view></ui-view>
 
 	
 
-
-	<!--
-	<div higuain></div>
-	-->
-
-
+	<div class="container-fluid">
+		<nav class="navbar navbar-inverse navbar-fixed-bottom footer">
+			<h4 class="navbar-right">Consul &copy;</h4>
+		</nav>
+	</div>
 
 		<script src="/app/example.js"></script>
 		<script src="/app/app.js"></script>

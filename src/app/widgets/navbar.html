@@ -1,0 +1,40 @@
+<!-- navigation bar -->
+	<div class="container-fluid">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Control de Inventario</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+
+		      <li class="active"><a ui-sref="home" ui-sref-active="active">Home</a></li>
+
+
+		      <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">Agregar
+		        <span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a ui-sref="newSensor" ui-sref-active="active">Sensor</a></li>
+		          <li><a ui-sref="newElement" ui-sref-active="active">Elemento</a></li>
+		        </ul>
+		      </li>
+
+		      <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">Ver
+		        <span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a ui-sref="viewSensors" ui-sref-active="active">Sensores</a></li>
+		          <li><a href="#">Elementos</a></li>
+		        </ul>
+		      </li>
+
+
+		    </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    </ul>
+		  </div>
+		</nav>
+	</div>
+<!-- navigation bar -->
