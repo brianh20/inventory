@@ -1,9 +1,193 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="style/bundle.css">
-</head>
-<body>
-index.htmo
-</body>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>Control de Inventario</title>
+
+		<!-- starts bower components -->
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen">
+		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" media="screen">
+
+
+		<!-- ends bower components -->
+
+
+		<!-- starts aplication styles -->
+		<link rel="stylesheet" type="text/css" href="style/bundle.css">
+		<!-- ends aplication styles -->
+
+		<!-- starts scripts -->
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="../bower_components/angular-animate/angular-animate.js"></script>
+		<script src="../bower_components/angular-touch/angular-touch.js"></script>
+		<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- ends scripts -->
+	</head>
+	<body>
+
+	<!-- Home Welcome -->
+	<div class="container-fluid">
+	  <div class="jumbotron">
+	    <h1>Control de Inventario</h1> 
+	    <p>Esta aplicación servirá para conocer el estado de su inventario en todo momento.</p> 
+	    <p>Para comenzar a monitorear un activo, haga click en el menú Agregar del panel superior.</p> 
+	  </div>
+	</div>
+	<!-- Home Welcome -->
+
+	<!-- navigation bar -->
+	<div class="container-fluid">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Control de Inventario</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+
+		      <li class="active"><a href="#">Home</a></li>
+
+
+		      <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+		        <span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Sensor</a></li>
+		          <li><a href="#">Elemento</a></li>
+		        </ul>
+		      </li>
+
+		      <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ver
+		        <span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Sensores</a></li>
+		          <li><a href="#">Elementos</a></li>
+		        </ul>
+		      </li>
+
+
+		    </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    </ul>
+		  </div>
+		</nav>
+	</div>
+	<!-- navigation bar -->
+
+	<!-- nuevo sensor 
+	<div class="container">
+		<div class="page-header">
+			<h1>Nuevo sensor</h1>
+		</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">ID Sensor</label>
+				<div class="col-sm-8">
+					<input type="email" class="form-control" id="email" placeholder="Ingrese el código identificador del sensor">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Tipo de Sensor:</label>
+				<div class="col-sm-2">
+					<select class="form-control" id="sel1">
+						<option>Apertura</option>
+						<option>Encendido</option>
+						<option>Movimiento</option>
+						<option>Posición</option>
+					</select>
+				</div>
+
+				<label class="control-label col-sm-2" for="pwd">Estado Actual</label>
+					<button class="col-sm-2 btn btn-default" onClick="alert('Sensor sin señal')">Probar Sensor</button>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" placeholder="Sin señal" readonly>
+					</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default" id="addSensor">Agregar Sensor</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- nuevo sensor -->
+
+	<!-- nuevo elemento
+	<div class="container">
+		<div class="page-header">
+			<h1>Nuevo elemento</h1>
+		</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Tipo de Elemento</label>
+				<div class="col-sm-8">
+					<input type="email" class="form-control" id="email" placeholder="Heladera, auto, etc. (se puede hacer una lista)">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Número de Serie</label>
+				<div class="col-sm-8">
+					<input type="email" class="form-control" id="email" placeholder="Ingrese el número de serie del elemento">
+				</div>
+			</div>
+
+
+
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Valores a Controlar</label>
+				<div class="col-sm-2">
+					<a class="btn btn-default" onClick="mostrarControl()"><span class="glyphicon glyphicon-plus"></span> Agregar Control</a>
+				</div>
+			</div>
+
+			<div class="form-group" id="agregarControl" style="display: none;">
+				<label class="control-label col-sm-2" for="pwd">Tipo de Sensor:</label>
+				<div class="col-sm-2">
+					<select class="form-control" id="sel1" style="display:inline">
+						<option>Apertura</option>
+						<option selected>Encendido</option>
+						<option>Movimiento</option>
+						<option>Posición</option>
+					</select>
+				</div>
+				<div class="col-sm-1">
+					<a class="btn btn-default" onClick="ocultarControl()"><span class="glyphicon glyphicon-minus"></span> Quitar</a>
+				</div>
+
+				
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Agregar Elemento</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- nuevo elemento -->
+
+	
+
+
+
+
+
+
+
+		<script src="/app/example.js"></script>
+	</body>
 </html>

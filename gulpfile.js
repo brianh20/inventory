@@ -14,8 +14,11 @@ gulp.task('jshint', function(){
 }) ;*/
 
 gulp.task('watch', function(){
+	gulp.watch('./*.html', reload);
 	gulp.watch('./src/*.html', reload);
 	gulp.watch('./src/*.js', reload);
+	gulp.watch('./src/app/*.html', reload);
+	gulp.watch('./src/app/*.js', reload);
 	gulp.watch('./src/style/*.less', ['less']);
 	gulp.watch('./src/style/*.css', reload);
 });

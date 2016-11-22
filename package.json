@@ -4,7 +4,7 @@
   "description": "Inventory status tracking app",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "bower install && gulp"
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
