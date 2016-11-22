@@ -1,7 +1,7 @@
 <!-- nuevo sensor -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Nuevo sensor</h1>
+			<h1>Sensores Activos</h1>
 		</div>
 		<form class="form-horizontal">
 			<div class="form-group">
@@ -22,18 +22,72 @@
 					</select>
 				</div>
 
-				<label class="control-label col-sm-2" for="pwd">Estado Actual</label>
-					<button class="col-sm-2 btn btn-default" onClick="alert('Sensor sin señal')">Probar Sensor</button>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" placeholder="Sin señal" readonly>
-					</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" id="addSensor">Agregar Sensor</button>
+				<label class="control-label col-sm-4" for="pwd">Estado del Sensor:</label>
+				<div class="col-sm-2">
+					<select class="form-control" id="sel1">
+						<option>OK</option>
+						<option>Sin Conexión</option>
+						<option>Apagado</option>
+						<option>Contador</option>
+					</select>
 				</div>
 			</div>
+
 		</form>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID Sensor</th>
+					<th>Tipo de Sensor</th>
+					<th>Estado/Valor</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>ENC1234</td>
+					<td>Encendido</td>
+					<td><span class="glyphicon glyphicon-ok icon-green"></span> OK</td>
+					<td>
+						<span class="glyphicon glyphicon-transfer"></span>
+						<span class="glyphicon glyphicon-pencil"></span>
+						<span class="glyphicon glyphicon-trash"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>ENC1235</td>
+					<td>Encendido</td>
+					<td><span class="glyphicon glyphicon-signal icon-yellow"></span> Sin Conexión</td>
+					<td>
+						<span class="glyphicon glyphicon-transfer"></span>
+						<span class="glyphicon glyphicon-pencil"></span>
+						<span class="glyphicon glyphicon-trash"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>ENC1236</td>
+					<td>Encendido</td>
+					<td><span class="glyphicon glyphicon-remove icon-red"></span> Apagado</td>
+					<td>
+						<span class="glyphicon glyphicon-transfer"></span>
+						<span class="glyphicon glyphicon-pencil"></span>
+						<span class="glyphicon glyphicon-trash"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>MOV2213</td>
+					<td>Movimiento</td>
+					<td><span class="glyphicon glyphicon-user"></span> 2554</td>
+					<td>
+						<span class="glyphicon glyphicon-transfer"></span>
+						<span class="glyphicon glyphicon-pencil"></span>
+						<span class="glyphicon glyphicon-trash"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
 	</div>
 <!-- nuevo sensor -->
