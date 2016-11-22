@@ -12,6 +12,9 @@ h4 {
   box-shadow: 0 4px 8px 0 lightgrey, 0 6px 20px 0 lightgrey;
   margin-top: 20px;
 }
+.navbar-brand {
+  color: lightgrey!important;
+}
 .page-header {
   margin-top: 0px;
 }

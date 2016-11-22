@@ -15,20 +15,26 @@ gulp.task('jshint', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('./*.html', reload);
+
 	gulp.watch('./src/*.html', reload);
 	gulp.watch('./src/*.js', reload);
+
 	gulp.watch('./src/app/*.html', reload);
 	gulp.watch('./src/app/*.js', reload);
-	gulp.watch('./src/style/*.less', ['less']);
-	gulp.watch('./src/style/*.css', reload);
+
+	gulp.watch('./src/app/pages/*.html', reload);
+	gulp.watch('./src/app/widgets/*.html', reload);
+
+	gulp.watch('./src/app/style/*.less', ['less']);
+	gulp.watch('./src/app/style/*.css', reload);
 });
 
 
 gulp.task('less', function() {
-    return gulp.src('./src/style/*.less')
+    return gulp.src('./src/app/style/*.less')
 	    .pipe(sourcemaps.init())
 	    .pipe(less())
-	    .pipe(concat('./src/style/bundle.css'))
+	    .pipe(concat('./src/app/style/bundle.css'))
 	    .pipe(sourcemaps.write('.'))
 	    .pipe(gulp.dest('./'));
 });

@@ -10,9 +10,8 @@
 		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" media="screen">
 		<!-- ends bower components -->
 
-
 		<!-- starts aplication styles -->
-		<link rel="stylesheet" type="text/css" href="style/bundle.css">
+		<link rel="stylesheet" type="text/css" href="app/style/bundle.css">
 		<!-- ends aplication styles -->
 
 		<!-- starts scripts -->
@@ -22,30 +21,23 @@
 		<script src="../bower_components/angular-touch/angular-touch.js"></script>
 		<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<!-- ends scripts -->
+
+		<link rel="shortcut icon" href="app/assets/favicons.ico" />
 	</head>
 	<body>
 
+		<navbar></navbar>
+		<ui-view></ui-view>
+		<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-bottom footer">
+				<h4 class="navbar-right">Consul &copy;</h4>
+			</nav>
+		</div>
 
-    
-
-	<navbar></navbar>
-
-	
-	<ui-view></ui-view>
-
-	
-
-	<div class="container-fluid">
-		<nav class="navbar navbar-inverse navbar-fixed-bottom footer">
-			<h4 class="navbar-right">Consul &copy;</h4>
-		</nav>
-	</div>
-
-		<script src="/app/example.js"></script>
-		<script src="/app/app.js"></script>
+			<script src="/app/example.js"></script>
+			<script src="/app/app.js"></script>
 	</body>
 </html>
