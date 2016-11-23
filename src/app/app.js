@@ -27,11 +27,26 @@ app.config(function($stateProvider){
 		templateUrl : '/app/pages/viewSensors.html'
 	}
 
+	var viewElements = {
+		name: 'viewElements',
+		url: '/viewElements',
+		templateUrl : '/app/pages/viewElements.html'
+	}
+
+	var editElement = {
+		name: 'editElement',
+		url: '/editElement',
+		templateUrl : '/app/pages/editElement.html'
+	}
+
+
 
 	$stateProvider.state(home);
 	$stateProvider.state(newSensor);
 	$stateProvider.state(newElement);
 	$stateProvider.state(viewSensors);
+	$stateProvider.state(viewElements);
+	$stateProvider.state(editElement);
 	
 });
 

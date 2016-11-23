@@ -1,0 +1,72 @@
+<!-- ver elementos -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Elementos Registrados</h1>
+		</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2">Numero de Serie</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" placeholder="Ingrese el código identificador del sensor">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Tipo de Elemento:</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" placeholder="Heladera, Moto, etc.">
+				</div>
+
+				<label class="control-label col-sm-4">Estado del Elemento:</label>
+				<div class="col-sm-2">
+					<select class="form-control">
+						<option>OK</option>
+						<option>Sin Conexión</option>
+						<option>Apagado</option>
+						<option>Contador</option>
+					</select>
+				</div>
+			</div>
+
+		</form>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Elemento</th>
+					<th># de Serie</th>
+					<th>Estado</th>
+					<th>Ver</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Heladera 1</td>
+					<td>951623847</th>
+					<td><span class="glyphicon glyphicon-ok icon-green"></span> OK</td>
+					<td><a ui-sref="editElement" ui-sref-active="active"><span class="glyphicon glyphicon-eye-open"></span> Ir al elemento</a></td>
+				</tr>
+				<tr>
+					<td>Heladera 2</td>
+					<td>753428691</th>
+					<td><span class="glyphicon glyphicon-signal icon-yellow"></span> Sin Conexión</td>
+					<td><span class="glyphicon glyphicon-eye-open"></span> Ir al elemento</td>
+				</tr>
+				<tr>
+					<td>Heladera 3</th>
+					<td>852964136</td>
+					<td><span class="glyphicon glyphicon-remove icon-red"></span> Apagado</td>
+					<td><span class="glyphicon glyphicon-eye-open"></span> Ir al elemento</td>
+				</tr>
+				<tr>
+					<td>Heladera 4</th>
+					<td>657142983</td>
+					<td><span class="glyphicon glyphicon-remove-circle"></span>Sin Sensores</td>
+					<td><span class="glyphicon glyphicon-paste"></span> Agregar Sensor</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+<!-- ver elementos -->
